@@ -1,0 +1,114 @@
+body {
+  background-color: #e0ded1;
+  transition: 0.3s;
+}
+
+h1 {
+  font-size: 72px;
+  font-family: 'FangSong';
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  letter-spacing: 7px;
+  color: #333333;
+}
+
+h4 {
+  font-size: 22px;
+  font-family: 'Palatino Linotype','Kaiti';
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  letter-spacing: 5px;
+  color: #333333;
+}
+
+ruby {
+  font-family: 'simsun';
+  letter-spacing: 1px;
+  ruby-position:under;
+  ruby-align: distribute-space;
+}
+
+.newspaper {
+  display: block;
+  position: relative;
+  margin: 0px;
+    padding: 0px 20px 20px 0px;
+    max-width: 100%;
+    -webkit-columns: 3 250px; /* Chrome, Safari, Opera */
+    -moz-columns: 3 250px; /* Firefox */
+    columns: 3 250px;
+    column-gap: 2em;
+    -moz-column-gap: 2em;
+    font-family: 'Times New Roman', Verdana,"Lucida Grande",Arial,Helvetica,sans-serif;
+    /*font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;*/
+    letter-spacing: 1px;
+    /*font-family: 'Microsoft YaHei','\5B8B\4F53', "Times New Roman", Times, serif;*/
+    font-size: 12px;
+    animation-name: pfadein;
+    animation-duration: 1s;
+    margin-bottom: 20px;
+    column-fill: balance;
+}
+
+.newspaper a {
+  text-decoration: underline;
+}
+
+.newspaper img {
+  display: block;
+  float: right;
+  position: relative;
+  max-height: 10vw;
+  min-height: 150px;
+  margin:auto;
+  padding: 10px 10px 10px 10px;
+  border-radius: 17px;
+  transition: 0.7s;
+  opacity: 0.7;
+}
+
+.newspaper img:hover {
+  opacity: 1;
+}
+
+.newspaper h2 {
+  color: #33331a;
+  text-transform: uppercase;
+  font-family: '\6977\4F53', Georgia, serif;
+  font-size: 26px;
+}
+
+.newspaper p{
+  color: #5e5c55;
+  line-height: 1.7em;
+}
+
+.main {
+  width: 62%;
+  max-width: 1000px;
+  /*background-color: #efede1;*/
+  margin: auto;
+}
+
+  .main a{
+    text-decoration: none;
+    color: #5e5c55;
+  }
+
+  .main a:visited{
+    color: #5e5c55;
+  }
+
+  .main h1 {
+    font-size: 55px;
+    letter-spacing: 3px;
+    margin-top: 25px;
+  }
+
+  .main h2 {
+    font-size: 24px;
+    font-family: 'Palatino Linotype', 'Kaiti';
+    line-height: 0px;
+  }

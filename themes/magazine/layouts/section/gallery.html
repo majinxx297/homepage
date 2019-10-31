@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+<style>
+body {
+  background-color: #2f271e;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  animation-name: bfadein;
+  animation-duration: 1s;
+}
+
+.logan {
+  font-size: 60px;
+  padding-top: 10px;
+  color: white;
+  opacity: 0.8;
+  font-family: "秀英明朝 B JIS2004", DNPShueiMinPr6N-B, "秀英明朝 M JIS2004", "DNPShueiMinPr6N-M", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-weight: bolder;
+  writing-mode: vertical-rl;
+  float: right;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 10px black;
+}
+
+.menu {
+  background-color: #4d3000;
+  background-image: url("/bg_img.jpg");
+  background-repeat: repeat;
+  /*background-size: 500px;*/
+  float: left;
+  width: 200px;
+  height: 100vh;
+}
+
+.thumbnail {
+  display: block;
+  float: left;
+  width: 110px;
+  /*height: 100%;*/
+  padding: 5px;
+}
+.thumbnail img {
+  height: 25px;
+  width: 25px;
+}
+
+.showImg {
+  margin-left: 200px;
+}
+
+.showImg iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  /*border-style:dotted;*/
+  /*border-color: #b36b00;*/
+  overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+  <div class="menu">
+    <div class="thumbnail">
+    {{ range .Data.Pages }}
+      <a href="{{ .Permalink }}" target="gwin" class="thumb">{{ .Summary }}</a>
+    {{ end }}
+  </div>
+  <div class="logan">{{.Site.Title}}</div>
+    <p><a href="{{ .Site.BaseURL }}">Home</a></p>
+  </div>
+  <div class="showImg" name="gwin">
+    <iframe name="gwin" src="/g_top.html"></iframe>
+  </div>
+<!-- {{ partial "footer.html" . }} -->
+
+<script>
+// Remove the P tag surrounding img
+var thumb = document.getElementsByClassName("thumb");
+var w;
+for (w = 0; w < thumb.length; w++){
+  var x = thumb[w].children;
+  var i;
+  var j;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].tagName == "P"){
+      var img = x[i].children;
+      for(j = 0; j < img.length; j++){
+        thumb[w].appendChild(img[j]);
+      }
+      thumb[w].removeChild(x[i]);
+    }
+  }
+}
+</script>
+</body>
+</html>

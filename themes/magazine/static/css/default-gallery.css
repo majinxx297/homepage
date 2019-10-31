@@ -1,0 +1,56 @@
+h1 {
+  font-size: 24px;
+  font-family:'Palatino Linotype','Kaiti';
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  letter-spacing: 40px;
+  color: #54542c;
+}
+
+.date {
+  text-align: left;
+  padding-top: 10px;
+  font-size: 12px;
+  margin-top: 0px;
+  font-family: 'Palatino Linotype','simsun';
+  color: #5e5b55;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: 'Palatino Linotype','Kaiti';
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 80px;
+  letter-spacing: 5px;
+  color: #333333;
+}
+
+body{
+  background-color: #2f271e;
+  animation-name: bfadein;
+  animation-duration: 0.3s;
+}
+.main {
+  width: 80%;
+  margin: auto;
+}
+
+.main p {
+  text-align: left;
+  font-family: 'Times New Roman', Verdana,"Lucida Grande",Arial,Helvetica,sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5em;
+  color: #8c8c73;
+}
+.main img{
+  display: block;
+  /*margin: auto;*/
+  max-width: 100%;
+  max-height: 60vh;
+  margin: 20px;
+  margin-left: 0px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 8px 16px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/default-article.css">
+  <title>{{ .Title }}</title>
+  <style>
+
+  .main p {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 22px;
+    font-family: 'Times New Roman','Kaiti';
+    line-height: 1.5em;
+    text-indent: 2em;
+  }
+
+  .main h3{
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .post{
+    width: 100%;
+    padding-top: 40px;
+    align-content: center;
+    animation-name: pfadein;
+    animation-duration: 1s;
+  }
+
+  .post img {
+    max-width: 70%;
+    max-height: 90vh;
+    display: block;
+    margin:auto;
+  }
+
+  </style>
+</head>
+<body>
+  <!-- {{ partial "header.html" . }} -->
+
+  <div class="main">
+  <h1>{{ .Title }}</h1>
+  <h3>{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
+  <div class="post">{{ .Content }}</div>
+  <p><a href="{{ .Site.BaseURL }}">Home</a></p>
+</div>
+  {{ partial "footer.html" . }}
+
+  <script>
+  //Format pixiv-embed instance
+  var x = document.getElementsByClassName("pixiv-embed");
+  var i;
+  for (i = 0; i < x.length; i++){
+    x[i].setAttribute("align", "center")
+    x[i].setAttribute("data-size", "large")
+  }
+  </script>
+  </body>
+</html>

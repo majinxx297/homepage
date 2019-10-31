@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/animation.css">
+  <link rel="stylesheet" type="text/css" href="/css/default-index.css">
+  <link rel="stylesheet" type="text/css" href="/css/sidenav.css">
+  <link rel="stylesheet" type="text/css" href="/css/modal.css">
+</head>
+
+<body id="main_content">
+  <!-- empty modal -->
+  <div class="modal" id = "modal-window">
+    <span class="close">×</span>
+    <img class="modal-content" id="modal_img">
+    <div id="caption"></div>
+  </div>
+
+<!-- Push sidenav -->
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#"><ruby>首页<rt>home</rt></ruby></a>
+  <a href="/profile"><ruby>著者<rt>profile</rt></ruby></a>
+  <a href="/gallery"><ruby>画廊<rt>gallery</rt></ruby></a>
+</div>
+
+  <h1>{{.Site.Title}}</h1>
+  <h4>{{ .Date.Format "2006年1月号 最终更新 1月2日" }}</h4>
+<div class="main">
+  <span style="font-size:22px;cursor:pointer; position:fixed; left:10px; top:3px;" onclick="openNav()">☰</span>
+{{ range first 10 .Data.Pages }}
+  {{ if eq .Type "article"}}
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="newspaper" id = "post-container">{{ .Summary }}
+    {{ if .Truncated }}
+      <a href="{{ .RelPermalink }}">Read More…</a>
+    {{ end }}
+    </div>
+  {{ end }}
+{{ end }}</div>
+
+<script src="/js/common.js"></script>
+<script>
+
+// -------------------- code for sidenav --------------------
+var bgcolor = document.body.style.backgroundColor;
+var width = document.getElementById("mySidenav").style.width;
+var marginl = document.getElementById("main_content").style.marginLeft;
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    document.getElementById("main_content").style.marginLeft = "200px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = width;
+    document.getElementById("main_content").style.marginLeft= marginl;
+    document.body.style.backgroundColor = bgcolor;
+}
+
+// -------------------- code for modal --------------------
+var modal = document.getElementById("modal-window");
+function show_modal(orig){
+  var img = document.getElementById("modal_img");
+  var caption = document.getElementById("caption");
+  modal.style.display = "block";
+  img.src = orig.src;
+  caption.innerHTML = orig.alt;
+}
+
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Show modal for all the images in posts
+var container = document.getElementById("post-container");
+var x = document.getElementsByTagName("IMG");
+var i;
+for (i = 0; i < x.length; i++) {
+  if (is_descendant(container, x[i].parentNode)) {
+    x[i].setAttribute("onclick", "show_modal(this)");
+  }
+}
+
+// -------------------- misc --------------------
+// format pixiv-embed object
+var x = document.getElementsByClassName("pixiv-embed");
+var i;
+for (i = 0; i < x.length; i++){
+  x[i].setAttribute("align", "center")
+  x[i].setAttribute("data-size", "small")
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+theme = "magazine"
+baseurl = "http://replace-this-with-your-hugo-site.com/"
+languageCode = "en-us"
+title = "周刊DigitalCraft"

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/animatino.css">
+  <link rel="stylesheet" type="text/css" href="/css/default-gallery.css">
+  <title>{{ .Title }}</title>
+</head>
+  <!-- {{ partial "header.html" . }} -->
+  <body>
+  <div class="main">
+  <h1>{{ .Title }}</h1>
+  <div class="date">{{ .Date.Format "2006年1月2日 完成" }}</div>
+  {{ .Content }}
+</div>
+</body>
+  <!-- {{ partial "footer.html" . }} -->
+</html>

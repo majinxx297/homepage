@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+<body>
+  {{ range .Data.Pages }}
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+  {{ end }}
+  <p><a href="{{ .Site.BaseURL }}">Home</a></p>
+{{ partial "footer.html" . }}
+</body>
+</html>
